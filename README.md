@@ -307,6 +307,7 @@ regenerates them).
 | 22 | `NoPendingAdmin` | `accept_admin` was called while no admin transfer is pending. |
 | 23 | `Overflow` | An arithmetic operation would overflow. |
 | 24 | `PayoutUnavailable` | The merchant's payout address cannot receive USDC: it has no USDC trustline, or the trustline is frozen. |
+| 25 | `PayoutFailed` | A merchant payout transfer failed after the subscriber's tokens were pulled, and the refund transfer to the subscriber also failed. |
 <!-- errors:subscriptions:end -->
 
 ### payroll
