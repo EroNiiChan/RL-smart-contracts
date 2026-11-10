@@ -725,6 +725,7 @@ fn pay_out(env: &Env, payout: &Address, amount: i128, fee: i128) -> Result<(), (
     let this = env.current_contract_address();
     token
         .try_transfer(&this, payout, &(amount - fee))
+        .map_err(|_| ())?
         .map_err(|_| ())?;
     if fee > 0 {
         token.transfer(&this, storage::get_fee_recipient(env), &fee);
